@@ -1,0 +1,32 @@
+From 54117e70d5ed4f1bba0c4375a3a6662941f3f3d0 Mon Sep 17 00:00:00 2001
+From: enzolstefanello <echizenkostefanello@gmail.com>
+Date: Wed, 28 Oct 2026 20:00:38 +0000
+Subject: [PATCH] Tutorial Ftrace - habilita function tracing
+
+---
+ arch/x86/configs/qemu_x86_custom_defconfig | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/arch/x86/configs/qemu_x86_custom_defconfig b/arch/x86/configs/qemu_x86_custom_defconfig
+index ae759caa..eab622bd 100644
+--- a/arch/x86/configs/qemu_x86_custom_defconfig
++++ b/arch/x86/configs/qemu_x86_custom_defconfig
+@@ -2887,7 +2887,6 @@ CONFIG_HAVE_FTRACE_MCOUNT_RECORD=y
+ CONFIG_HAVE_SYSCALL_TRACEPOINTS=y
+ CONFIG_HAVE_C_RECORDMCOUNT=y
+ CONFIG_TRACING_SUPPORT=y
+-# CONFIG_FTRACE is not set
+ 
+ #
+ # Runtime Testing
+@@ -3173,3 +3172,7 @@ CONFIG_SG_POOL=y
+ CONFIG_ARCH_HAS_SG_CHAIN=y
+ CONFIG_ARCH_HAS_MMIO_FLUSH=y
+ CONFIG_SBITMAP=y
++
++CONFIG_FTRACE=y
++CONFIG_FUNCTION_TRACER=y
++CONFIG_FUNCTION_GRAPH_TRACER=y
+-- 
+2.55.0
+
