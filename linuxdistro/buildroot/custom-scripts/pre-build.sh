@@ -9,6 +9,14 @@ chmod +x $BASE_DIR/target/usr/bin/systeminfo.py
 cp $BASE_DIR/../custom-scripts/S50systeminfo $BASE_DIR/target/etc/init.d
 chmod +x $BASE_DIR/target/etc/init.d/S50systeminfo
 
+# Compile and install the scheduler threads application
+$BASE_DIR/host/bin/i686-buildroot-linux-uclibc-gcc \
+    -pthread \
+    $BASE_DIR/../custom-scripts/scheduler_threads.c \
+    -o $BASE_DIR/target/usr/bin/scheduler_threads
+
+chmod +x $BASE_DIR/target/usr/bin/scheduler_threads
+
 # Compile and install the Simple Driver
 make -C $BASE_DIR/../modules/simple_driver/
 
