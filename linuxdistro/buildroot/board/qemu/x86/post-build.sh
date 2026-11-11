@@ -20,3 +20,11 @@ $COMPILER -o $TARGET_DIR/bin/syscall_sleep_test $BUILDROOT_DIR/custom-scripts/sy
 
 # Compile the syscall_message_test application
 $COMPILER -o $TARGET_DIR/bin/syscall_message_test $BUILDROOT_DIR/custom-scripts/syscall_message_test.c
+
+# Compile the sched_profiler application
+mkdir -p "$TARGET_DIR/usr/bin"
+
+"$COMPILER" \
+    -std=c11 -O2 -Wall -Wextra -pthread \
+    "$BUILDROOT_DIR/custom-scripts/sched_profiler.c" \
+    -o "$TARGET_DIR/usr/bin/sched_profiler"
