@@ -1,0 +1,13 @@
+diff --git a/kernel/sched/sched.h b/kernel/sched/sched.h
+index c8d1b680..6a60e81d 100644
+--- a/kernel/sched/sched.h
++++ b/kernel/sched/sched.h
+@@ -1358,7 +1358,7 @@ static inline void finish_lock_switch(struct rq *rq, struct task_struct *prev)
+ #define WEIGHT_IDLEPRIO                3
+ #define WMULT_IDLEPRIO         1431655765
+ #define WEIGHT_LOW_IDLEPRIO            1
+-#define WMULT_LOW_IDLEPRIO     1431655765
++#define WMULT_LOW_IDLEPRIO 4294967295U
+ 
+ extern const int sched_prio_to_weight[40];
+ extern const u32 sched_prio_to_wmult[40];
